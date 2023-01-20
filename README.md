@@ -26,9 +26,9 @@ To call process B or C:
   rosrun Assignment_2 node_c.py
 ```
 
-#How works
+# How works
 - Process A: 
-'''
+```
 Initialize object Pose() and Twist()
 global variable pub_info, target_reached, target_canceled, service, pub_target
 	
