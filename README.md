@@ -4,12 +4,14 @@ The assignment consist of a development of a package that interact with a simula
 also publishes the robot position and velocity as a custom message (x,y, vel_x, vel_z), by relying on the values
 published on the topic /odom. Please consider that, if you cannot implement everything in the same node, you
 can also develop two different nodes, one implementing the user interface and one implementing the publisher
-of the custom message.
+of the custom message. 
 - Node B: A service node that, when called, prints the number of goals reached and cancelled.
 - Node C: A node that subscribes to the robot’s position and velocity (using the custom message) and prints the
 distance of the robot from the target and the robot’s average speed. Use a parameter to set how fast the
 node publishes the information. 
 - Has also been implemented a **.launch** file that starts the whole simulation and the Noe A. 
+
+*The launch file starts the simulator and the node in the same window so you can not correctly display the request for the location to be reached. Just press enter to have the request printed on the terminal again.*
 
 # Intalling & Run
 Clone this project and the simulation repository(https://github.com/CarmineD8/assignment_2_2022) inside a ROS workspace. Before starting anything you have to run the master process of ROS
