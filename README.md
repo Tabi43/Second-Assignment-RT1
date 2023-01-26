@@ -79,7 +79,7 @@ function get_info_goal(CustomMessage: req){
 	return response
 }	
 
-main():	
+main(){
 
 	#Initialization of elements
 	pose <- PoseStamped()
@@ -125,7 +125,7 @@ main():
 				if(state != 1 and state != 0) Then
 					print("Targhet reachedd!) 				
 					finished <- True 
-    }
+    		}
 			  
 		
 		time.sleep(1)
@@ -136,5 +136,6 @@ main():
 			target_reached <- target_reached + 1
 		else
 			printf(Error...)
+	}
 }
 '''
