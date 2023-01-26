@@ -26,6 +26,8 @@ To call process B or C:
   rosrun Assignment_2 node_c.py
 ```
 
+***Attention !*** To run correctly the package's node rename the package "Assignment_2"
+
 # How works
 - Process A: 
 ```
