@@ -1,5 +1,16 @@
 #! /usr/bin/env python3
 
+"""
+.. module:: node_a
+    :platform: Unix
+    :synopsis: Python module for Second Assignment of RT1 course
+    
+.. moduleauthor:: Marco Tabita 4653859@studenti.unige.it
+
+Ciao   
+    
+"""
+
 import sys
 import rospy
 import select
