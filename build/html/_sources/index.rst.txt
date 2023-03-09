@@ -19,10 +19,10 @@ Indices and tables
 * :ref:`modindex`
 * :ref:`search`
 
-Turtlebot_controller documentation!
+Second Assignment documentation!
 **************************************
 
-This is the documentation of the turtlebot_controller package!
+This is the documentation of the Second Assignment of RT1.
 
 Node A
 ===========================
@@ -30,6 +30,14 @@ Node A
 .. automodule:: src.node_a
 	:members:
 
+Node B
+===========================
 
+.. automodule:: src.node_b
+	:members:
 
+Node C
+===========================
 
+.. automodule:: src.node_c
+	:members:

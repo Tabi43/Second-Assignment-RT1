@@ -7,8 +7,21 @@
     
 .. moduleauthor:: Marco Tabita 4653859@studenti.unige.it
 
-Ciao   
-    
+\details
+
+This node implement an action client allowing an user to set a target(x,y) or to cancel it
+at any time. This node also publish the robot position and velocity as a custom message by reling on 
+the topic /odom.   
+
+Subscribes to: 
+	/odom
+
+Publish to:
+	/bot_info
+	/tgt
+
+Services:
+	goal_info
 """
 
 import sys
@@ -29,6 +42,13 @@ pose_ = Pose()
 twist_ = Twist()
 	
 def clbk_odom(msg):
+	"""
+		Callback function to publish the desired information 
+		taken from /odom.
+
+		Args:
+		msg(Odometry): It contains the odometry of the robot
+	"""
 	global pub_info
 	
 	x_ = msg.pose.pose.position.x
@@ -48,6 +68,10 @@ def clbk_odom(msg):
 		
 	
 def getCordinatesFromConsole():		
+	"""
+		Function that ask to the user a new 
+		targhet. It check if the input given is valid.
+	"""
 	print("Set a new target:")
 	while True:
 		try:
@@ -66,6 +90,13 @@ def getCordinatesFromConsole():
 	return x,y
 	
 def ltk_tgt(x, y):
+	"""
+		Function to publish on /tgt the new target.
+
+		Args:
+		x(float) : x position of the new target
+		y(float) : y position of the new target
+	"""
 	global pub_target
 	
 	target = Point()
@@ -77,6 +108,13 @@ def ltk_tgt(x, y):
 	pub_target.publish(target)
 
 def get_info_goal(req):
+	"""
+		Callback function to return as response the number of 
+		traget reached and the one of target canceled.
+
+		Args:
+		req(target): the service's request it does not contain nothing actually.
+	"""
 	global target_reached, target_canceled, service 
 	
 	return targetResponse(target_reached, target_canceled)
@@ -100,7 +138,7 @@ def main():
 	pub_info = rospy.Publisher('/bot_info', Info, queue_size=1)	
 	pub_target = rospy.Publisher('/tgt', Point, queue_size=1)
 	
-	#Subscribe to \odom
+	#Subscribe
 	sub_odom = rospy.Subscriber('/odom', Odometry, clbk_odom)	
 	service = rospy.Service('goal_info',target, get_info_goal)
 	
