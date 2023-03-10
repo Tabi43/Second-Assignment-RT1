@@ -1,5 +1,22 @@
 #! /usr/bin/env python3
 
+"""
+.. module:: node_b
+	:platform: Unix
+	::synopsis: Python module for Second Assignment of RT1 course
+
+.. moduleauthor:: Marco Tabita 4653859@studenti.unige.it
+
+\details 
+
+This node print the robot average speed and the distance from the 
+actual target. 
+
+Subscribes to: 
+	/bot_info
+	/tgt
+"""
+
 import rospy
 import actionlib
 import actionlib.msg
@@ -15,6 +32,12 @@ global avg_vx, avg_vy, n_samp
 
 
 def clbk_info(msg):
+	"""
+		Callback function to /bot_info
+
+		Args:
+			msg (Info): It contains the avg_vx and avg_vy  
+	"""
 	global rx,ry,avg_vx, avg_vy, n_samp, rate, distance
 	
 	distance = math.sqrt(pow((rx - msg.x),2)+pow((ry - msg.x),2))
@@ -24,6 +47,12 @@ def clbk_info(msg):
 	
 	
 def clbk_tgt(msg):
+	"""
+		Callback function to /tgt
+
+		Args:
+			msg (Point): It contains the coordinates of the target
+	"""
 	global rx, ry
 
 	rx = msg.x 
