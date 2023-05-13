@@ -1,13 +1,13 @@
 #! /usr/bin/env python3
 
 """
-.. module:: node_b
-	:platform: Unix
-	::synopsis: Python module for Second Assignment of RT1 course
-
+.. module:: node_a
+	:platform: Unix 
+	:synopsis: Python module for Second Assignment of RT1 course
+	
 .. moduleauthor:: Marco Tabita 4653859@studenti.unige.it
 
-\details 
+\details
 
 This node send a request to the service goal_info
 then it print the response wich contains the number of 
@@ -15,6 +15,7 @@ target canceled and the number of target reached
 
 Services:
 	goal_info
+	
 """
 
 import rospy
