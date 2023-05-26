@@ -13,6 +13,8 @@ node publishes the information.
 
 *The launch file starts the simulator and the node in the same window so you can not correctly display the request for the location to be reached. Just press enter to have the request printed on the terminal again.*
 
+Documentation here: https://tabi43.github.io/Second-Assignment-RT1/
+
 # Intalling & Run
 Clone this project and the simulation repository(https://github.com/CarmineD8/assignment_2_2022) inside a ROS workspace. Before starting anything you have to run the master process of ROS
 ```bash
